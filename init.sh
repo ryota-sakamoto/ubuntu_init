@@ -1,4 +1,4 @@
-sudo apt install git curl expect libssl-dev cmake golang vlc powertop tlp tlp-rdw putty -y
+sudo apt install git curl expect libssl-dev cmake golang vlc powertop tlp tlp-rdw putty vim -y
 expect -c "
 spawn sh -c \"curl https://sh.rustup.rs | sh\"
 expect \"Cancel installation\"
@@ -7,11 +7,6 @@ expect \"source $HOME/.cargo/env\"
 exit 0
 " 
 echo "source $HOME/.cargo/env" >> ~/.bashrc
-
-cat << EOF > ~/.vimrc
-set nocompatible
-set backspace=indent,eol,start
-EOF
 
 sudo apt remove -y $(apt list | grep libreoffice | grep "\[" | grep -oE "libreoffice-.*/" | tr -d "/")
 sudo apt autoremove
