@@ -31,4 +31,9 @@ mv $HOME/ピクチャ $HOME/Pictures
 mv $HOME/ビデオ $HOME/Videos
 
 sudo tlp start
+
+curl -L https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -o /tmp/vscode.deb
+dpkg -i /tmp/vscode.deb
+rm -rf /tmp/vscode.deb
+
 sudo shutdown -r now
